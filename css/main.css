@@ -1,0 +1,234 @@
+/* ------------------ CSS Variables -------------- */
+:root {
+  /* Colours */
+
+  --colour-main: #8b9694;
+  --colour-secondary: #798071;
+  --colour-light-accent: #838169;
+  --colour-light-shade: #e8ebe4;
+  --colour-dark-accent: #6a7075;
+  --colour-dark-accent-light: #bfc2c5;
+  --colour-white-accent: #e8ede7;
+  --colour-dark-shade: #394e48;
+
+  /* Text Colours */
+  --text-dark: #000;
+  --text-light: #f1f4f4;
+}
+
+/* --------------------- CSS Reset ------------------------------ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html {
+  color: var(--colour-main);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.5;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+}
+
+/* Update default margin */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+ol,
+ul,
+dl,
+dd {
+  margin: 0 0 1.5rem;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* A elements that don't have a class get default styles */
+a {
+  text-decoration-skip-ink: auto;
+  color: var(--colour-dark-accent);
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--colour-light-shade);
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+svg {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* -- CSS Reset End -- */
+
+/* ---------- Container Reset ---------- */
+
+.container {
+  width: min(65em, 100%);
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.container--text {
+  width: min(40em, 100%);
+}
+
+/* ---------- Buttons Reset ---------- */
+
+.btn {
+  /* common styles */
+  display: inline-block;
+  padding: 0.55em 1.5em 0.5em;
+  background-color: var(--colour-dark-shade);
+  border: 0.125rem solid #000;
+  color: var(--colour-light-shade);
+  border-radius: 0.5em;
+  box-shadow: 0 0.25rem 0.75rem #0004;
+  text-align: center;
+  transition: all 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  &:is(:hover, :focus) {
+    background-color: var(--colour-secondary);
+    border-color: var(--colour-dark-shade);
+    color: var(--colour-light-shade);
+  }
+}
+
+.btn--secondary {
+  background-color: var(--colour-secondary);
+  border-color: var(--colour-secondary);
+  color: var(--colour-main);
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  &:is(:hover, :focus) {
+    background-color: var(--colour-dark-accent);
+    border-color: var(--colour-dark-accent);
+    color: var(--colour-light-shade);
+  }
+}
+
+/*------ Btn Styles end ------ */
+
+body {
+  background-color: var(--colour-main);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: var(--colour-dark-shade);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle a {
+  text-decoration: none;
+}
+
+.subtitle a:hover {
+  color: var(--colour-main);
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: var(--colour-dark-shade);
+  margin-bottom: 0.5rem;
+}
+
+.container {
+  text-align: center;
+  background-color: var(--colour-light-shade);
+  padding: 1.2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.6rem #000;
+  max-width: 45rem;
+  width: 100%;
+}
