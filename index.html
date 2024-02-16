@@ -1,29 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jay's Custom Web Component</title>
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1 class="title">Custom Web Component</h1>
-        <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <button class="btn" id="openDialog1">Show Dialog 1</button>
-        <button class="btn" id="openDialog2">Show Dialog 2</button>
+      <h1 class="title">Custom Web Component</h1>
+      <p class="subtitle">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <button class="btn" id="openDialog1">Info</button>
+      <button class="btn" id="openDialog2">Error</button>
+      <button class="btn" id="openDialog3">Success</button>
     </div>
-    
+
     <jay-dialog id="dialog1" action="func" level="info" label="OK">
-        <span slot="title">Info Title</span>
-        <span slot="message">This is an info message.</span>
+      <span slot="title">Information!</span>
+      <span slot="message">This is an informative message.</span>
     </jay-dialog>
 
     <jay-dialog id="dialog2" action="func" level="error" label="Dismiss">
-        <span slot="title">Error Title</span>
-        <span slot="message">This is an error message.</span>
+      <span slot="title">Uh oh, Error!</span>
+      <span slot="message"
+        >Something is not working, this is an error message.</span
+      >
+    </jay-dialog>
+
+    <jay-dialog id="dialog3" action="func" level="success" label="Dismiss">
+      <span slot="title">Success!</span>
+      <span slot="message">This is a successful message.</span>
     </jay-dialog>
 
     <script type="module" src="./js/main.js"></script>
-</body>
+  </body>
 </html>
